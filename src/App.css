@@ -1,60 +1,125 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&family=Roboto:ital,wght@1,300;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&family=Roboto:ital,wght@1,300;1,400&display=swap");
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
-
-*{
+* {
   box-sizing: border-box;
 }
-body{
-    color: #ffff;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    font-family: "Poppins",sans-serif;
-    margin: 0;
-    align-items: center;
-    justify-content: center;
-    line-height: 1;
+body {
+  color: #ffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
 }
-.App{
+.App {
   min-height: 100vh;
   min-width: 100vw;
- 
 }
-.colorPickerButton{
+.colorPickerButton {
   padding: 20px;
- 
 }
 .github-picker {
   position: absolute !important;
   margin-top: 10px;
 }
-.content{
+.content {
   width: 100%;
   min-height: 600px;
   display: flex;
@@ -62,35 +127,42 @@ body{
   align-items: center;
   justify-content: center;
 }
-h1{
-    font-weight: normal;
-    font-size: 4rem;
-    text-align: center;
-  
+.title {
+  font-weight: normal;
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 60px;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
-.container{
-    display: flex;
-    flex-wrap:wrap ;
-    justify-content: center;
-    
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-.text{
-    font-size: 6rem;
-    line-height: 1;
-    margin: 0 2rem;
-    
+.text {
+  font-size: 6rem;
+  line-height: 1;
+  margin: 0 2rem;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
-.countdown{
-    text-align: center;
+.smallText {
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  font-size: 25px;
+}
+.countdown {
+  text-align: center;
 }
 
-
-.colorPickerButton{
+.colorPickerButton {
   padding: 5px;
   color: #ffff;
 }
 
-.changeColorButton{
+.changeColorButton {
   background-color: #ffff;
   border: #666666 1px solid;
   border-radius: 5px;

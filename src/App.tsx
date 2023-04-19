@@ -59,7 +59,7 @@ function App() {
       />
 
       <div className="content">
-        <h1>New Year</h1>
+        <h1 className="title">New Year</h1>
         <div className="container">
           <Countdown countdown={day} text="days" />
           <Countdown countdown={hour} text="hours" />

@@ -7,7 +7,7 @@ function Countdown({ countdown, text }: CountdownProps) {
   return (
     <div className="countdown">
       <p className="text">{countdown}</p>
-      <span>{text}</span>
+      <span className="smallText">{text}</span>
     </div>
   );
 }
