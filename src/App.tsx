@@ -3,15 +3,24 @@ import "./App.css";
 import Countdown from "./components/Countdown";
 import ColorPicker from "./components/ColorPicker";
 import { formatTime } from "./utils/formatTime";
+import { useSelector } from "react-redux";
 
+interface colorType {
+  color: {
+    background: string;
+  };
+}
+
+type RootState = {
+  color: colorType;
+};
 function App() {
   const [day, setDay] = useState<string | number>(0);
   const [hour, setHour] = useState<string | number>(0);
   const [minute, setMinute] = useState<string | number>(0);
   const [second, setSecond] = useState<string | number>(0);
-  const [color, setColor] = useState<{ background: string }>({
-    background: "#eb9694",
-  });
+
+  const { color } = useSelector((state: RootState) => state.color);
 
   const year = new Date().getFullYear() + 1;
   const newYears = "1 Jan" + year;
@@ -45,13 +54,10 @@ function App() {
     setSecond(seconds);
   };
 
-  const handleChangeComplete = (color: { hex: string }) => {
-    setColor({ background: color.hex });
-  };
 
   return (
     <div className="App" style={{ background: color.background }}>
-      <ColorPicker handleChangeComplete={handleChangeComplete} />
+      <ColorPicker />
       <div className="content">
         <h1 className="title">New Year</h1>
         <div className="container">

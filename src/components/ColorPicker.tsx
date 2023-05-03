@@ -1,18 +1,18 @@
 import { useState, useRef } from "react";
 import { GithubPicker } from "react-color";
 import { useOnClickOutside } from "../hooks/hooks";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { updateColor } from "../stores/color";
 
-type ColorPickerProps = {
-  handleChangeComplete: (color: { hex: string }) => void;
-};
+
 interface RootState {
   color: {
     background: string;
   };
 }
 
-function ColorPicker({ handleChangeComplete }: ColorPickerProps) {
+function ColorPicker() {
+  const dispatch = useDispatch();
   const [displayColorPicker, setDisplayColorPicker] = useState<boolean>(false);
 
   const color = useSelector((state: RootState) => state.color);
@@ -24,6 +24,9 @@ function ColorPicker({ handleChangeComplete }: ColorPickerProps) {
 
   useOnClickOutside(ref, () => handleClick());
 
+  const handleChangeComplete = (color: { hex: string }) => {
+    dispatch(updateColor(color.hex ));
+  };
   return (
     <div className="colorPickerButton">
       <button onClick={handleClick} className="changeColorButton">
