@@ -28,12 +28,12 @@ function ColorPicker() {
     dispatch(updateColor(color.hex ));
   };
   return (
-    <div className="colorPickerButton">
+    <div className="colorPickerButton" ref={ref}>
       <button onClick={handleClick} className="changeColorButton">
         Change Color
       </button>
       {displayColorPicker ? (
-        <div ref={ref}>
+        <div>
           <GithubPicker
             color={color.background}
             onChangeComplete={handleChangeComplete}
