@@ -54,7 +54,6 @@ function App() {
   return (
     <div className="App" style={{ background: color.background }}>
       <ColorPicker
-        color={color}
         handleChangeComplete={handleChangeComplete}
       />
 
