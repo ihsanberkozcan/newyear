@@ -27,7 +27,7 @@ function ColorPicker({ handleChangeComplete }: ColorPickerProps) {
   return (
     <div className="colorPickerButton">
       <button onClick={handleClick} className="changeColorButton">
-        Change color
+        Change Color
       </button>
       {displayColorPicker ? (
         <div ref={ref}>
