@@ -13,7 +13,6 @@ interface RootState {
 }
 
 function ColorPicker({ handleChangeComplete }: ColorPickerProps) {
-
   const [displayColorPicker, setDisplayColorPicker] = useState<boolean>(false);
 
   const color = useSelector((state: RootState) => state.color);
@@ -24,7 +23,7 @@ function ColorPicker({ handleChangeComplete }: ColorPickerProps) {
   };
 
   useOnClickOutside(ref, () => handleClick());
-  
+
   return (
     <div className="colorPickerButton">
       <button onClick={handleClick} className="changeColorButton">

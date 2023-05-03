@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Countdown from "./components/Countdown";
 import ColorPicker from "./components/ColorPicker";
+import { formatTime } from "./utils/formatTime";
 
 function App() {
   const [day, setDay] = useState<string | number>(0);
@@ -11,6 +12,7 @@ function App() {
   const [color, setColor] = useState<{ background: string }>({
     background: "#eb9694",
   });
+
   const year = new Date().getFullYear() + 1;
   const newYears = "1 Jan" + year;
 
@@ -43,20 +45,13 @@ function App() {
     setSecond(seconds);
   };
 
-  const formatTime = (time: number) => {
-    return time < 10 ? `0${time}` : time;
-  };
-
   const handleChangeComplete = (color: { hex: string }) => {
     setColor({ background: color.hex });
   };
 
   return (
     <div className="App" style={{ background: color.background }}>
-      <ColorPicker
-        handleChangeComplete={handleChangeComplete}
-      />
-
+      <ColorPicker handleChangeComplete={handleChangeComplete} />
       <div className="content">
         <h1 className="title">New Year</h1>
         <div className="container">
