@@ -5,11 +5,17 @@ export const useOnClickOutside = <T extends HTMLElement = HTMLElement>(
   handler: (event: Event) => void
 ) => {
   useEffect(() => {
-    const listener = (event: any) => {
-      if (!ref.current || ref.current.contains(event.target)) {
+    const listener = (event: Event) => {
+      const el = ref.current;
+      if (!el || el.contains(event.target as Node)) {
         return;
       }
-
+      if (
+        event.target instanceof Element &&
+        event.target.tagName.toLowerCase() === "button"
+      ) {
+        return;
+      }
       handler(event);
     };
 

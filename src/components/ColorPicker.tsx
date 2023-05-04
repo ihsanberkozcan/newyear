@@ -22,18 +22,18 @@ function ColorPicker() {
     setDisplayColorPicker(!displayColorPicker);
   };
 
-  useOnClickOutside(ref, () => handleClick());
+  useOnClickOutside(ref, () => setDisplayColorPicker(false));
 
   const handleChangeComplete = (color: { hex: string }) => {
     dispatch(updateColor(color.hex ));
   };
   return (
-    <div className="colorPickerButton" ref={ref}>
+    <div className="colorPickerButton">
       <button onClick={handleClick} className="changeColorButton">
         Change Color
       </button>
       {displayColorPicker ? (
-        <div>
+        <div ref={ref}>
           <GithubPicker
             color={color.background}
             onChangeComplete={handleChangeComplete}
