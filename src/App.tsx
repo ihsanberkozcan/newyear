@@ -63,7 +63,7 @@ function App() {
         <div className="container">
           <Countdown countdown={day} text="days" />
           <Countdown countdown={hour} text="hours" />
-          <Countdown countdown={minute} text="mins" />
+          <Countdown countdown={minute} text="minutes" />
           <Countdown countdown={second} text="seconds" />
         </div>
       </div>
