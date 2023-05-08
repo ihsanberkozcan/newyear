@@ -4,7 +4,8 @@ import Countdown from "./components/Countdown";
 import ColorPicker from "./components/ColorPicker";
 import { formatTime } from "./utils/formatTime";
 import { useSelector } from "react-redux";
-
+import { useTranslation } from "react-i18next";
+import Languages from "./components/Languages";
 interface colorType {
   color: {
     background: string;
@@ -15,6 +16,7 @@ type RootState = {
   color: colorType;
 };
 function App() {
+  const { t } = useTranslation();
   const [day, setDay] = useState<string | number>(0);
   const [hour, setHour] = useState<string | number>(0);
   const [minute, setMinute] = useState<string | number>(0);
@@ -30,7 +32,7 @@ function App() {
       countDown();
     }, 1000);
     return () => clearInterval(interval);
-  }, []);
+  });
 
   const countDown = () => {
     const newYearsDate: Date = new Date(newYears);
@@ -53,13 +55,15 @@ function App() {
     setMinute(minuts);
     setSecond(seconds);
   };
-
-
   return (
     <div className="App" style={{ background: color.background }}>
-      <ColorPicker />
+      <div className="header">
+        <ColorPicker />
+        <Languages />
+      </div>
+
       <div className="content">
-        <h1 className="title">New Year</h1>
+        <h1 className="title">{t("newYear")}</h1>
         <div className="container">
           <Countdown countdown={day} text="days" />
           <Countdown countdown={hour} text="hours" />
