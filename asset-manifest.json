@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/newyear/static/css/main.6d4154e3.css",
-    "main.js": "/newyear/static/js/main.f3e88deb.js",
+    "main.css": "/newyear/static/css/main.f80bb8d6.css",
+    "main.js": "/newyear/static/js/main.505d0761.js",
     "index.html": "/newyear/index.html"
   },
   "entrypoints": [
-    "static/css/main.6d4154e3.css",
-    "static/js/main.f3e88deb.js"
+    "static/css/main.f80bb8d6.css",
+    "static/js/main.505d0761.js"
   ]
 }
