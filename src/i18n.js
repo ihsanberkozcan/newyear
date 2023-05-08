@@ -5,6 +5,7 @@ const resources = {
   en: {
     translation: {
       newYear: "New Year",
+      changeColor: "Change Color",
       days: "days",
       hours: "hours",
       minutes: "minutes",
@@ -14,6 +15,7 @@ const resources = {
   tr: {
     translation: {
       newYear: "Yeni Yıl",
+      changeColor: "Renk Değiştir",
       days: "gün",
       hours: "saat",
       minutes: "dakika",

@@ -3,7 +3,7 @@ import { GithubPicker } from "react-color";
 import { useOnClickOutside } from "../hooks/hooks";
 import { useDispatch, useSelector } from "react-redux";
 import { updateColor } from "../stores/color";
-
+import { useTranslation } from "react-i18next";
 
 interface RootState {
   color: {
@@ -18,6 +18,8 @@ function ColorPicker() {
   const color = useSelector((state: RootState) => state.color);
   const ref = useRef<HTMLDivElement>(null);
 
+  const { t } = useTranslation();
+
   const handleClick = () => {
     setDisplayColorPicker(!displayColorPicker);
   };
@@ -30,7 +32,7 @@ function ColorPicker() {
   return (
     <div className="colorPickerButton">
       <button onClick={handleClick} className="changeColorButton">
-        Change Color
+        {t("changeColor")}
       </button>
       {displayColorPicker ? (
         <div ref={ref}>
