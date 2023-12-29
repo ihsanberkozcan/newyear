@@ -25,8 +25,7 @@ function App() {
   const { color } = useSelector((state: RootState) => state.color);
 
   const year = new Date().getFullYear() + 1;
-  const newYears = "1 Jan" + year;
-
+  const newYears = "January 1, " + year;
   useEffect(() => {
     const interval = setInterval(() => {
       countDown();
